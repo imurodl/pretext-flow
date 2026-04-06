@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretext Flow — Typographic Art Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div id="toolbar">
+        <div class="toolbar-group">
+          <label>Tool</label>
+          <div class="btn-group">
+            <button id="tool-draw" class="active" title="Draw obstacles">Draw</button>
+            <button id="tool-circle" title="Place circles">Circle</button>
+            <button id="tool-rect" title="Place rectangles">Rect</button>
+            <button id="tool-eraser" title="Erase obstacles">Eraser</button>
+          </div>
+        </div>
+        <div class="toolbar-group">
+          <label>Brush</label>
+          <input type="range" id="brush-size" min="10" max="120" value="40">
+        </div>
+        <div class="toolbar-group">
+          <label>Font</label>
+          <select id="font-select">
+            <option value="Inter">Inter</option>
+            <option value="Playfair Display">Playfair Display</option>
+            <option value="Space Mono">Space Mono</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Helvetica">Helvetica</option>
+          </select>
+        </div>
+        <div class="toolbar-group">
+          <label>Size</label>
+          <input type="range" id="font-size" min="10" max="48" value="16">
+          <span id="font-size-label">16px</span>
+        </div>
+        <div class="toolbar-group">
+          <label>Colors</label>
+          <input type="color" id="text-color" value="#e0e0e0" title="Text color">
+          <input type="color" id="bg-color" value="#111111" title="Background">
+        </div>
+        <div class="toolbar-group">
+          <button id="btn-clear">Clear</button>
+          <button id="btn-export">Export PNG</button>
+        </div>
+      </div>
+      <canvas id="canvas"></canvas>
+      <textarea id="text-input" placeholder="Paste or type your text here..."></textarea>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
